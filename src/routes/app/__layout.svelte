@@ -5,16 +5,14 @@
 
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { getUserContext, setUserContext } from '$lib/userStore';
-
-	const { user } = getUserContext();
+	import { user } from '$lib/stores/userStore';
 </script>
 
 <div class="app-grid">
-	<header>
+	<header class="container">
 		<nav>
-			<button on:click={() => goto('/auth/login')}>Login</button>
-			<button on:click={() => goto('/app')}>Home</button>
+			<button class="btn btn-primary" on:click={() => goto('/auth/login')}>Login</button>
+			<button class="btn btn-primary" on:click={() => goto('/app')}>Home</button>
 		</nav>
 		<div>
 			{#if $user}
@@ -24,15 +22,20 @@
 			{/if}
 		</div>
 	</header>
-	<slot />
-	<footer />
+	<main class="container">
+		<slot />
+	</main>
+	<footer>
+		<div>Questo è il footer</div>
+	</footer>
 </div>
 
 <style lang="scss">
 	.app-grid {
+		height: 100vh;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr auto 1fr;
+		grid-template-rows: 60px auto 80px;
 	}
 
 	header {

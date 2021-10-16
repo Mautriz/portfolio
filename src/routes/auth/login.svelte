@@ -4,25 +4,24 @@
 
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { getUserContext } from '$lib/userStore';
+	import { user } from '$lib/stores/userStore';
 
 	let formValue = {
 		username: ''
 	};
 
-	const { setNewUser } = getUserContext();
-
 	const login = (username: string) => {
-		setNewUser({ username, id: username });
+		user.set({ username, id: username });
 		goto('/app');
 	};
 </script>
 
 <div>
-	<form>
+	<form on:submit|preventDefault={() => login(formValue.username)}>
 		<input type="text" bind:value={formValue.username} />
-		<button on:submit|preventDefault={() => login(formValue.username)} />
+		<button class="btn btn-primary">Submit</button>
 	</form>
 </div>
 
+<slot />
 <div>Current username: {formValue.username}</div>

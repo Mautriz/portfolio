@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/env';
-	import { getUserContext } from '$lib/userStore';
-
-	const { user } = getUserContext();
+	import { user } from '$lib/stores/userStore';
 
 	if (!$user && browser) goto('/app');
 </script>
+
+<slot />
