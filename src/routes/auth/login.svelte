@@ -7,6 +7,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { user } from '$lib/stores/userStore';
+	import { absLink } from '$lib/utils';
 
 	let formValue = {
 		username: ''
@@ -14,7 +15,7 @@
 
 	const login = (username: string) => {
 		user.set({ username, id: username });
-		goto('/app');
+		goto(absLink('/app'));
 	};
 </script>
 
