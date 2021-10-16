@@ -16,9 +16,6 @@ const config = {
 	}),
 
 	kit: {
-		paths: {
-			base: basePath
-		},
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: adapter({
