@@ -16,12 +16,15 @@ const config = {
 	}),
 
 	kit: {
+		paths: {
+			base: basePath
+		},
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: adapter({
 			// default options are shown
 			pages: 'build',
-			assets: `build${basePath}`,
+			assets: `build`,
 			fallback: '404.html'
 		})
 	}
