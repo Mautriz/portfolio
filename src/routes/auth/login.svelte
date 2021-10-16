@@ -1,3 +1,5 @@
+<svelte:options immutable={false} />
+
 <script context="module">
 	export const prerender = true;
 </script>

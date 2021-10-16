@@ -6,13 +6,14 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { user } from '$lib/stores/userStore';
+	import { absLink } from '$lib/utils';
 </script>
 
 <div class="app-grid">
 	<header class="container">
 		<nav>
-			<button class="btn btn-primary" on:click={() => goto('/auth/login')}>Login</button>
-			<button class="btn btn-primary" on:click={() => goto('/app')}>Home</button>
+			<button class="btn btn-primary" on:click={() => goto(absLink('/auth/login'))}>Login</button>
+			<button class="btn btn-primary" on:click={() => goto(absLink('/app'))}>Home</button>
 		</nav>
 		<div>
 			{#if $user}
