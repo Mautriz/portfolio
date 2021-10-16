@@ -1,7 +1,9 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 
-const basePath = process.env.APP_BASE_PATH || '/';
+const basePath = process.env.APP_BASE_PATH || '';
+
+console.log({ basePath });
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
