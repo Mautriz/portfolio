@@ -3,13 +3,12 @@ import adapter from '@sveltejs/adapter-static';
 
 const basePath = process.env.APP_BASE_PATH || '';
 
-console.log({ basePath });
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	compilerOptions: {
 		immutable: true
 	},
+
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: preprocess({
@@ -18,7 +17,6 @@ const config = {
 
 	kit: {
 		paths: {
-			assets: basePath,
 			base: basePath
 		},
 		// hydrate the <div id="svelte"> element in src/app.html
@@ -26,7 +24,7 @@ const config = {
 		adapter: adapter({
 			// default options are shown
 			pages: 'build',
-			assets: 'build',
+			assets: `build${basePath}`,
 			fallback: '404.html'
 		})
 	}
