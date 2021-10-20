@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script lang="ts">
 	import Prova from '$lib/components/Prova.svelte';
 	import { user } from '$lib/stores/userStore';
