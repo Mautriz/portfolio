@@ -1,3 +1,5 @@
+import { assets } from '$app/paths';
+
 export function getAssetAsString(assetName: string): Promise<string> {
-	return fetch(`/static/${assetName}`).then((r) => r.text());
+	return fetch(`${assets}/${assetName}`).then((r) => r.text());
 }

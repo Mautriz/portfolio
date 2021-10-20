@@ -1,13 +1,12 @@
-<script>
-	import { base } from '$app/paths';
-	import { absLink } from '$lib/utils';
+<script lang="ts">
+	import Link from '$lib/components/Link.svelte';
 
-	base;
+	import { absLink } from '$lib/utils';
 </script>
 
 <div>Are you lost ? There's no page with that url</div>
-<p>
-	Go back to the <a href={absLink('/app')}>Homepage</a>
+<p class="text-gray-700">
+	Go back to the <Link href={absLink('/app')}>Homepage</Link>
 </p>
 
 <style>

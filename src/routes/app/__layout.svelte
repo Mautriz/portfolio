@@ -1,19 +1,15 @@
-<script context="module" lang="ts">
-	import '@interactjs/interact';
-	import '@interactjs/actions';
-</script>
-
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import Button from '$lib/components/Button.svelte';
 	import { user } from '$lib/stores/userStore';
 	import { absLink } from '$lib/utils';
 </script>
 
 <div class="app-grid">
-	<header class="container">
+	<header>
 		<nav>
-			<button class="btn btn-primary" on:click={() => goto(absLink('/auth/login'))}>Login</button>
-			<button class="btn btn-primary" on:click={() => goto(absLink('/app'))}>Home</button>
+			<Button on:click={() => goto(absLink('/auth/login'))}>Login</Button>
+			<Button on:click={() => goto(absLink('/app'))}>Home</Button>
 		</nav>
 		<div>
 			{#if $user}
@@ -23,7 +19,7 @@
 			{/if}
 		</div>
 	</header>
-	<main class="container">
+	<main>
 		<slot />
 	</main>
 	<footer>

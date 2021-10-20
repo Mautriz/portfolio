@@ -11,9 +11,12 @@ const config = {
 
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: preprocess({
-		scss: true
-	}),
+	preprocess: [
+		preprocess({
+			// scss: true,
+			postcss: true
+		})
+	],
 
 	kit: {
 		paths: {

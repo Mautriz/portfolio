@@ -6,6 +6,7 @@
 
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import Button from '$lib/components/Button.svelte';
 	import { user } from '$lib/stores/userStore';
 	import { absLink } from '$lib/utils';
 
@@ -22,7 +23,7 @@
 <div>
 	<form on:submit|preventDefault={() => login(formValue.username)}>
 		<input type="text" bind:value={formValue.username} />
-		<button class="btn btn-primary">Submit</button>
+		<Button on:click={() => login(formValue.username)}>Vai Forza</Button>
 	</form>
 </div>
 
