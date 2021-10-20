@@ -12,10 +12,7 @@
 		<link rel="modulepreload" href="/portfolio/_app/chunks/vendor-6e691cf2.js">
 		<link rel="modulepreload" href="/portfolio/_app/chunks/singletons-12a22614.js">
 		<link rel="modulepreload" href="/portfolio/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/portfolio/_app/pages/__layout.svelte-aee73820.js">
-		<link rel="modulepreload" href="/portfolio/_app/pages/index.svelte-c65af933.js">
 		<link rel="stylesheet" href="/portfolio/_app/assets/start-464e9d0a.css">
-		<link rel="stylesheet" href="/portfolio/_app/assets/pages/__layout.svelte-211f745c.css">
 
 		<script type="module">
 			import { start } from "/portfolio/_app/start-15a77e58.js";
@@ -25,32 +22,14 @@
 				session: {},
 				host: location.host,
 				route: true,
-				spa: false,
+				spa: true,
 				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/portfolio/_app/pages/__layout.svelte-aee73820.js"),
-						import("/portfolio/_app/pages/index.svelte-c65af933.js")
-					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "\u002F",
-						query: new URLSearchParams(""),
-						params: {}
-					}
-				}
+				hydrate: null
 			});
 		</script>
 	</head>
 	<body>
 		<div id="svelte">
-
-
-<div>Homepage</div>
-
-
 
 			
 		</div>
