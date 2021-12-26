@@ -27,7 +27,7 @@
 	</footer>
 </div>
 
-<style lang="scss">
+<style>
 	.app-grid {
 		height: 100vh;
 		display: grid;
